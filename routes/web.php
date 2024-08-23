@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controller\HomeController;
 use App\Http\Controller\UserController;
+use App\Http\Controller\DashboardController;
+use App\Http\Controller\StatsController;
 
 /*
 |--------------------------------------------------------------------------
