@@ -51,7 +51,7 @@ Route::middleware(['auth'])->group(function(){
     // Task 6: /app group within a group
     // Add another group for routes with prefix "app"
     // Put one Route Group code line here below
-    Route::prefix('/app')->group(function(){
+    Route::prefix('app')->group(function(){
 
         // Tasks inside that /app group:
 
@@ -69,7 +69,7 @@ Route::middleware(['auth'])->group(function(){
     // End of the /app Route Group
     });
 
-    Route::prefix('/admin')->middleware(['is_admin'])->group(function(){
+    Route::prefix('admin')->middleware(['is_admin'])->group(function(){
 
     
     // Task 9: /admin group within a group
