@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controller\HomeController;
+use App\Http\Controller\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,11 +28,11 @@ Route::get('/user/{name}',[UserController::class,'show']);
 // resources/views/pages/about.blade.php - without any controller
 // Also, assign the route name "about"
 // Put one code line here below
-
+Route::get('/about','about');
 
 // Task 4: redirect the GET URL "log-in" to a URL "login"
 // Put one code line here below
-
+Route::get('log-in',function(){return redirect()->route('login');});
 
 // Task 5: group the following route sentences below in Route::group()
 // Assign middleware "auth"
