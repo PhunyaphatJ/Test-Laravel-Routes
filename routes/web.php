@@ -39,8 +39,7 @@ Route::get('/about',function(){
 
 // Task 4: redirect the GET URL "log-in" to a URL "login"
 // Put one code line here below
-Route::get('log-in',function(){return redirect()->route('login');});
-
+Route::redirect('log-in','login');
 // Task 5: group the following route sentences below in Route::group()
 // Assign middleware "auth"
 // Put one Route Group code line here below
@@ -60,12 +59,12 @@ Route::middleware(['auth'])->group(function(){
         // Task 7: point URL /app/dashboard to a "Single Action" DashboardController
         // Assign the route name "dashboard"
         // Put one Route Group code line here below
-        Route::get('dashboard',[DashboardController::class,'Single Action'])->name('dashboard');
+        Route::get('dashboard',DashboardController::class)->name('dashboard');
 
         // Task 8: Manage tasks with URL /app/tasks/***.
         // Add ONE line to assign 7 resource routes to TaskController
         // Put one code line here below
-        Route::resource('task',TaskController::class);
+        Route::resource('tasks',TaskController::class);
 
     // End of the /app Route Group
     });
@@ -84,7 +83,7 @@ Route::middleware(['auth'])->group(function(){
 
         // Task 10: point URL /admin/dashboard to a "Single Action" Admin/DashboardController
         // Put one code line here below
-        Route::get('/dashboard',[AdminDashboard::class,'Single Action']);
+        Route::get('/dashboard',AdminDashboard::class);
 
         // Task 11: point URL /admin/stats to a "Single Action" Admin/StatsController
         // Put one code line here below
