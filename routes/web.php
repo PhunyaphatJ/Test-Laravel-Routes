@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controller\HomeController;
 use App\Http\Controller\UserController;
 use App\Http\Controller\DashboardController;
+use App\Http\Controller\TaskController;
 use App\Http\Controller\StatsController;
 use App\Http\Controller\Admin\DashboardController as AdminDashboard;
 
@@ -64,6 +65,7 @@ Route::middleware(['auth'])->group(function(){
         // Task 8: Manage tasks with URL /app/tasks/***.
         // Add ONE line to assign 7 resource routes to TaskController
         // Put one code line here below
+        Route::resource('task',TaskController::class);
 
     // End of the /app Route Group
     });
