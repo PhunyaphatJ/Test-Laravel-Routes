@@ -30,7 +30,9 @@ Route::get('/user/{name}',[UserController::class,'show']);
 // resources/views/pages/about.blade.php - without any controller
 // Also, assign the route name "about"
 // Put one code line here below
-Route::get('/about','about')->name('about');
+Route::get('/about',function(){
+    return views('about');
+})->name('about');
 
 // Task 4: redirect the GET URL "log-in" to a URL "login"
 // Put one code line here below
