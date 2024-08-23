@@ -69,7 +69,7 @@ Route::middleware(['auth'])->group(function(){
     // End of the /app Route Group
     });
 
-    Route::prefix('admin')->middleware(['is_admin'])->group(function(){
+    Route::middleware('is_admin')->prefix('admin')->group(function(){
 
     
     // Task 9: /admin group within a group
